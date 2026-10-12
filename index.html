@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nossos Restaurantes – 8 bits</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="./src/style/style.css">
+</head>
+<body>
+<main>
+<h1>♥ NOSSOS RESTAURANTES</h1>
+<p class="sub">Onde já fomos. Onde vamos depois. <span class="blink">▮</span></p>
+
+<details class="box" id="cfg">
+  <summary>CONFIGURAÇÃO (CHAVE DO GOOGLE)</summary>
+  <div class="row">
+    <input type="password" id="key" placeholder="Chave da Places API (New)" aria-label="Chave da API do Google" autocomplete="off">
+    <button class="alt" id="savekey">SALVAR CHAVE</button>
+  </div>
+  <p class="addr" id="mode"></p>
+</details>
+
+<div class="tabs" role="tablist">
+  <button class="tab" role="tab" id="t-s" aria-selected="true">BUSCAR</button>
+  <button class="tab alt" role="tab" id="t-v" aria-selected="false">NOSSOS (<span id="cnt">0</span>)</button>
+</div>
+
+<section id="p-s">
+  <form class="row box" id="sf">
+    <input type="text" id="q" placeholder="ex: pizzaria em Belo Horizonte" aria-label="Buscar restaurantes" required>
+    <button>BUSCAR</button>
+  </form>
+  <div id="res"></div>
+</section>
+
+<section id="p-v" hidden>
+  <div class="stats" id="stats"></div>
+  <div id="saved"></div>
+</section>
+</main>
+
+<script src="./src/javascript/config.js"></script>
+<script src="./src/javascript/script.js"></script>
+</body>
+</html>

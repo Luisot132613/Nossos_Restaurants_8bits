@@ -1,0 +1,39 @@
+/* Tema Dia dos Namorados: edite as cores nas variáveis abaixo */
+:root{--bg:#3b0a1e;--panel:#6b1233;--deep:#2a0614;--line:#ffe8ef;--pink:#e11d48;--yel:#ff7aa2;--grn:#ffb3c7;--cya:#ffc857;--mut:#e0a3b7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--line);font:22px/1.25 VT323,monospace;
+background-image:linear-gradient(var(--deep) 2px,transparent 2px),linear-gradient(90deg,var(--deep) 2px,transparent 2px);background-size:32px 32px}
+main{max-width:720px;margin:0 auto;padding:28px 16px 56px}
+h1,h2,button,.tab,label,.pxf{font-family:'Press Start 2P',monospace;font-weight:400}
+h1{font-size:clamp(16px,4.2vw,26px);line-height:1.5;margin:0 0 6px;color:#ffd6e2;text-shadow:4px 4px 0 var(--pink)}
+.sub{color:var(--mut);margin:0 0 22px;font-size:24px}
+.box{background:var(--panel);padding:16px;margin:0 0 22px;box-shadow:0 -4px 0 0 var(--line),0 4px 0 0 var(--line),-4px 0 0 0 var(--line),4px 0 0 0 var(--line)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+input,textarea{font:inherit;font-size:22px;color:var(--line);background:var(--deep);border:0;padding:10px;min-width:0;box-shadow:0 -3px 0 0 var(--mut),0 3px 0 0 var(--mut),-3px 0 0 0 var(--mut),3px 0 0 0 var(--mut)}
+input:focus,textarea:focus{outline:0;box-shadow:0 -3px 0 0 var(--cya),0 3px 0 0 var(--cya),-3px 0 0 0 var(--cya),3px 0 0 0 var(--cya)}
+input[type=text],input[type=password]{flex:1 1 200px}
+textarea{width:100%;resize:vertical;min-height:56px}
+button{font-size:10px;line-height:1.6;color:var(--deep);background:var(--yel);border:0;padding:12px 14px;cursor:pointer;box-shadow:0 5px 0 0 #a8294f,0 -3px 0 0 var(--line),0 3px 0 0 var(--line),-3px 0 0 0 var(--line),3px 0 0 0 var(--line)}
+button:active{transform:translateY(4px);box-shadow:0 1px 0 0 #a8294f,0 -3px 0 0 var(--line),0 3px 0 0 var(--line),-3px 0 0 0 var(--line),3px 0 0 0 var(--line)}
+button.alt{background:var(--cya);box-shadow:0 5px 0 0 #b07d0a,0 -3px 0 0 var(--line),0 3px 0 0 var(--line),-3px 0 0 0 var(--line),3px 0 0 0 var(--line)}
+button.bad{background:var(--pink);color:#fff}
+button:disabled{background:var(--mut);cursor:default}
+:focus-visible{outline:3px dashed var(--cya);outline-offset:4px}
+.tabs{display:flex;gap:14px;margin-bottom:24px}
+.tab[aria-selected=true]{background:var(--pink);color:#fff}
+h2{font-size:12px;line-height:1.6;margin:0 0 6px;color:var(--grn)}
+.card{margin-bottom:22px}
+.addr{color:var(--mut)}
+.meta{display:flex;gap:16px;flex-wrap:wrap;margin:6px 0 10px;color:var(--yel)}
+.meta a{color:var(--cya)}
+.hearts{display:flex;gap:6px;margin:8px 0}
+.hearts button{padding:6px;background:transparent;box-shadow:none;line-height:0}
+.hearts button:active{transform:none}
+.hearts svg{width:28px;height:24px;display:block}
+label{font-size:9px;color:var(--mut);display:block;margin:10px 0 6px}
+.msg{padding:12px;margin-bottom:18px;background:var(--deep);color:var(--yel)}
+.msg.err{color:#ff8fab}
+.empty{text-align:center;color:var(--mut);padding:28px 0;font-size:26px}
+.stats{color:var(--grn);font-size:24px;margin-bottom:18px}
+details summary{cursor:pointer;font-family:'Press Start 2P',monospace;font-size:10px;color:var(--cya);margin-bottom:12px}
+@media (prefers-reduced-motion:no-preference){.blink{animation:b 1s steps(2) infinite}@keyframes b{50%{opacity:0}}}
