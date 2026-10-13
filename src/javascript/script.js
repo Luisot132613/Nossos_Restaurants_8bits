@@ -8,7 +8,7 @@ var LS='nossos.v1',DEMO=[
 var CFG=window.CONFIG||{},S={key:'',saved:[]},OK=true;
 try{var r=JSON.parse(localStorage.getItem(LS));if(r){S.key=r.key||'';S.saved=r.saved||[]}}catch(e){OK=false}
 if(!S.key)S.key=String(CFG.apiKey||'').trim();
-function save(){try{localStorage.setItem(LS,JSON.stringify(S));OK=true}catch(e){OK=false}mode()}
+function save(){try{localStorage.setItem(LS,JSON.stringify(S));OK=true}catch(e){OK=false}mode();return OK}
 function $(i){return document.getElementById(i)}
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 var HEART=['.XX.XX.','XXXXXXX','XXXXXXX','.XXXXX.','..XXX..','...X...'];
