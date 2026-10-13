@@ -58,5 +58,21 @@ $('saved').onclick=function(e){var p=find(e.target);if(!p)return;var b=e.target.
  if(b.dataset.love){p.love=p.love===+b.dataset.love?0:+b.dataset.love;save();renderSaved()}
  else if(b.dataset.del&&confirm('Remover "'+p.name+'"?')){S.saved=S.saved.filter(function(x){return x!==p});save();renderSaved();count()}};
 $('saved').oninput=function(e){var p=find(e.target),f=e.target.dataset.f;if(p&&f){p[f]=e.target.value;save()}};
+$('exp').onclick=function(){var b=new Blob([JSON.stringify({v:1,saved:S.saved})],{type:'application/json'}),a=document.createElement('a');
+ a.href=URL.createObjectURL(b);a.download='nossos-restaurantes-backup-'+new Date().toISOString().slice(0,10)+'.json';
+ document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)};
+var bf=document.createElement('input');bf.type='file';bf.accept='application/json,.json';
+$('imp').onclick=function(){bf.click()};
+bf.onchange=function(){var f=this.files[0];this.value='';if(!f)return;var rd=new FileReader();
+ rd.onload=function(){var bak=JSON.parse(JSON.stringify(S.saved)),n=0;
+  try{var j=JSON.parse(rd.result);if(!j||!Array.isArray(j.saved))throw new Error('formato');
+   j.saved.forEach(function(q){if(!q||!q.id||!q.name)return;
+    q.uri=/^https?:\/\//.test(q.uri||'')?q.uri:'';q.img=/^data:image\//.test(q.img||'')?q.img:'';q.love=Math.max(0,Math.min(5,+q.love||0));
+    var i=S.saved.findIndex(function(p){return p.id===q.id});if(i>=0)S.saved[i]=q;else S.saved.push(q);n++});
+   if(!save()){S.saved=bak;save();alert('Sem espaço no navegador para importar tudo.');return}
+   renderSaved();count();alert(n+' lugar(es) importado(s).')}
+  catch(e){S.saved=bak;alert('Esse arquivo não parece um backup válido.')}};
+ rd.readAsText(f)};
+try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
 mode();count();if(!OK)$('cfg').open=true;
 })();
