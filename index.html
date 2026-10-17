@@ -2,39 +2,39 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nossos Restaurantes – 8 bits</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
-<link rel="stylesheet" href="./src/style/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">   
+<title>Nossos Restaurantes – 8 bits</title> <!--Informa o nome da página que será visualizado no navegador-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"> <!--Pack de fontes utilizadas nesse site-->
+<link rel="stylesheet" href="./src/style/style.css"> <!--Inclui o arquivo style.css externo-->
 </head>
 <body>
 <main>
-<h1>♥ NOSSOS RESTAURANTES</h1>
-<p class="sub">Onde já fomos. Onde vamos depois. <span class="blink">▮</span></p>
+<h1>♥ NOSSOS RESTAURANTES</h1> <!--Título da página-->
+<p class="sub">Onde já fui com o meu amorzinho. <span class="blink">▮</span></p> <!--Subtítulo da página-->
 
 <details class="box" id="cfg">
-  <summary>CONFIGURAÇÃO (CHAVE DO GOOGLE)</summary>
+  <summary>CONFIGURAÇÃO (CHAVE DO GOOGLE)</summary> <!--Forma apresentada para a chave API não ficar salva no código-->
   <div class="row">
     <input type="password" id="key" placeholder="Chave da Places API (New)" aria-label="Chave da API do Google" autocomplete="off">
-    <button class="alt" id="savekey">SALVAR CHAVE</button>
+    <button class="alt" id="savekey">SALVAR CHAVE</button> <!--A chave API fica salva somente nos cookies do site e não exposta no código para os usuários-->
   </div>
   <p class="addr" id="mode"></p>
 
   <div class="row">
-  <button class="alt" id="exp">EXP BACKUP</button>
-  <button class="alt" id="imp">IMP BACKUP</button>
+  <button class="alt" id="exp">EXP BACKUP</button> <!--Botão para exportar arquivo .json e copiar os cookies da página-->
+  <button class="alt" id="imp">IMP BACKUP</button> <!--Botão para importar arquivo .json e coletar os cookies salvos da página-->
   </div>
-  <p class="addr">O backup guarda seus lugares e notas. A chave de API não vai no arquivo.</p>
+  <p class="addr">O backup guarda seus lugares e notas. A chave de API não vai no arquivo.</p> <!--Texto informativo, não compromete a chave API-->
 </details>
 
 <div class="tabs" role="tablist">
-  <button class="tab" role="tab" id="t-s" aria-selected="true">BUSCAR</button>
-  <button class="tab alt" role="tab" id="t-v" aria-selected="false">NOSSOS (<span id="cnt">0</span>)</button>
+  <button class="tab" role="tab" id="t-s" aria-selected="true">BUSCAR</button> <!--Botão de busca dos locais na API Place da Google-->
+  <button class="tab alt" role="tab" id="t-v" aria-selected="false">NOSSOS (<span id="cnt">0</span>)</button> <!--Locais salvos com contagem, avaliação e notas-->
 </div>
 
 <section id="p-s">
   <form class="row box" id="sf">
-    <input type="text" id="q" placeholder="ex: pizzaria em Belo Horizonte" aria-label="Buscar restaurantes" required>
+    <input type="text" id="q" placeholder="ex: pizzaria em Divinópolis" aria-label="Buscar restaurantes" required> <!--Local default no campo do botão buscar-->
     <button>BUSCAR</button>
   </form>
   <div id="res"></div>
@@ -46,7 +46,7 @@
 </section>
 </main>
 
-<script src="./src/javascript/config.js"></script>
-<script src="./src/javascript/script.js"></script>
+<script src="./src/javascript/config.js"></script> <!--Inclui o arquivo externo de script da página config.js-->
+<script src="./src/javascript/script.js"></script> <!--Inclui o arquivo externo de script da página script.js-->
 </body>
 </html>

@@ -1,4 +1,5 @@
 /* Tema Dia dos Namorados: edite as cores nas variáveis abaixo */
+/* Elemento root é a base do código fonte*/
 :root{--bg:#3b0a1e;--panel:#6b1233;--deep:#2a0614;--line:#ffe8ef;--pink:#e11d48;--yel:#ff7aa2;--grn:#ffb3c7;--cya:#ffc857;--mut:#e0a3b7}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--line);font:22px/1.25 VT323,monospace;
